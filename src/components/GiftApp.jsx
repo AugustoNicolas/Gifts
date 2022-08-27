@@ -3,7 +3,12 @@ import {useState} from 'react'
 
 export const GiftApp =() => {
     const [categorias, setCategoria] = useState(["Peliculas", "Musica", "Libros"])
-    const handlerAdd =()=> setCategoria([...categorias, document.getElementById("Input").value]); 
+    const handlerAdd =()=>{ 
+        const newCat = document.getElementById("Input");
+        setCategoria([...categorias, newCat.value]);
+        newCat.value = "";
+
+        }
 
     return(
         <>
